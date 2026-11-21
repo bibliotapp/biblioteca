@@ -1,0 +1,113 @@
+/* Reinicio básico y tipografía amigable */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fbf6f7; /* Blanco cálido con un matiz rosado muy suave */
+    color: #2d161c;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+/* Tarjeta principal del libro */
+body > div {
+    width: 100%;
+    max-width: 380px;
+    background-color: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 12px 28px rgba(114, 28, 49, 0.09);
+    border: 1px solid #f2e4e7;
+    overflow: hidden;
+}
+
+/* Cabecera tono vino que enmarca la portada */
+.foto {
+    background: linear-gradient(145deg, #6e192e, #942742);
+    padding: 32px 20px 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Estilo de portada física (lomo recto a la izquierda, bordes suaves a la derecha) */
+.foto img {
+    width: 145px;
+    height: 210px;
+    object-fit: cover;
+    background-color: #f4e6e9; /* Respaldo si la imagen tarda en cargar */
+    border-radius: 4px 12px 12px 4px;
+    border: 3px solid #ffffff;
+    box-shadow: -6px 10px 20px rgba(38, 6, 14, 0.35);
+    display: block;
+}
+
+/* Contenedor de la ficha técnica */
+.texto {
+    padding: 22px 24px 28px;
+    background-color: #ffffff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Filas apiladas para lectura cómoda en pantallas estrechas */
+tr {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid #f5eaec;
+}
+
+tr:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Etiquetas (Título, ISBN, Autor) */
+td:first-child {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #9e5264; /* Vino suave */
+    margin-bottom: 4px;
+}
+
+/* Valores generales */
+td:last-child {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d161c;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+/* Destacar automáticamente la primera fila (Título del libro) */
+tr:first-child td:last-child {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #6e192e; /* Vino intenso */
+}
+
+/* Ajuste para pantallas medianas y escritorio */
+@media (min-width: 600px) {
+    body > div {
+        max-width: 420px;
+    }
+
+    .foto img {
+        width: 160px;
+        height: 230px;
+    }
+}
