@@ -1,0 +1,98 @@
+/* Reinicio básico y tipografía moderna */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #afafaf;
+    color: #91000d;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+/* Contenedor principal (Tarjeta / Carnet) */
+body > div {
+    width: 100%;
+    max-width: 380px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+/* Sección de la fotografía con encabezado decorativo */
+.foto {
+    background: linear-gradient(135deg, #b0121f, #5e0910);
+    padding: 32px 20px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #cbd5e1; /* Color de respaldo si aún no hay imagen */
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: block;
+}
+
+/* Sección de datos */
+.texto {
+    padding: 20px 24px 28px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Apilado vertical para evitar que textos largos se corten en móviles */
+tr {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+tr:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Etiqueta (Nombre, Carnet, Carrera) */
+td:first-child {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #64748b;
+    margin-bottom: 4px;
+}
+
+/* Valor del dato */
+td:last-child {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0f172a;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+/* Ajuste opcional para pantallas más anchas (tablets/escritorio) */
+@media (min-width: 600px) {
+    body > div {
+        max-width: 420px;
+    }
+}
